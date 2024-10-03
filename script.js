@@ -1,45 +1,24 @@
-const musicContainer = document.getElementById("music-container");
-const playBtn = document.getElementById("play");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
+import { tracks } from "./tracks.js";
 
 const audio = document.getElementById("audio");
-const progress = document.getElementById("progress");
-const progressContainer = document.getElementById("progress-container");
-const title = document.getElementById("title");
 const cover = document.getElementById("cover");
-const pic = document.getElementById("pic");
-const currTime = document.querySelector("#currTime");
-const durTime = document.querySelector("#durTime");
+const title = document.getElementById("title");
 
-// Song titles
-const songs = ["hey", "summer", "ukulele"];
-const tracks = [
-  { src: "music/0903_rapeig.mp3", name: "Rapeig", cover: "image/hey.jpg" },
-  {
-    src: "music/0708_preview_song.mp3",
-    name: "Preview Song",
-    cover: "image/ukulele.jpg",
-  },
-];
-
-// Keep track of song
-let songIndex = 1;
-
-// Initially load song details into DOM
-// loadSong(songs[songIndex]);
+// Keep track of song and initially load song details into DOM
+let songIndex = 0;
 loadSong(tracks[songIndex]);
-// console.log(tracks[songIndex]);
 
 // Update song details
 function loadSong(song) {
-  title.innerText = song.name;
   audio.src = `${song.src}`;
   cover.src = `${song.cover}`;
-  // pic.src = `${song.cover}`;
+  title.innerText = song.name;
 }
 
 // Play song
+const musicContainer = document.getElementById("music-container");
+const playBtn = document.getElementById("play");
+
 function playSong() {
   musicContainer.classList.add("play");
   playBtn.querySelector("i.fas").classList.remove("fa-play");
@@ -86,6 +65,8 @@ function nextSong() {
 }
 
 // Update progress bar
+const progress = document.getElementById("progress");
+
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
@@ -129,6 +110,8 @@ function DurTime(e) {
   get_sec(currentTime, sec);
 
   // change currentTime DOM
+  const currTime = document.querySelector("#currTime");
+
   if (currTime !== null) {
     currTime.innerHTML = min + ":" + sec;
   }
@@ -152,10 +135,11 @@ function DurTime(e) {
   }
 
   // define seconds duration
-
   get_sec_d(duration);
 
   // change duration DOM
+  const durTime = document.querySelector("#durTime");
+
   if (currTime !== null) {
     durTime.innerHTML = min_d + ":" + sec_d;
   }
@@ -173,6 +157,8 @@ playBtn.addEventListener("click", () => {
 });
 
 // Change song
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
 prevBtn.addEventListener("click", prevSong);
 nextBtn.addEventListener("click", nextSong);
 
@@ -180,6 +166,7 @@ nextBtn.addEventListener("click", nextSong);
 audio.addEventListener("timeupdate", updateProgress);
 
 // Click on progress bar
+const progressContainer = document.getElementById("progress-container");
 progressContainer.addEventListener("click", setProgress);
 
 // Song ends
@@ -187,36 +174,3 @@ audio.addEventListener("ended", nextSong);
 
 // Time of song
 audio.addEventListener("timeupdate", DurTime);
-
-// const audioPlayer = document.getElementById("audio-player");
-// const trackNameDisplay = document.getElementById("track-name"); // Get the track name element
-
-// // List of music tracks
-// const tracks = [
-//   { src: "music/0903_rapeig.mp3", name: "Rapeig" },
-//   { src: "music/0708_preview_song.mp3", name: "Preview Song" },
-// ];
-
-// let currentTrack = 0;
-
-// // Function to load and play the current track
-// function loadTrack(trackIndex) {
-//   audioPlayer.src = tracks[trackIndex].src;
-//   audioPlayer.play();
-//   trackNameDisplay.textContent = `Ara sona: ${tracks[trackIndex].name}`; // Update the track name
-// }
-
-// // Play the next track
-// function nextTrack() {
-//   currentTrack = (currentTrack + 1) % tracks.length;
-//   loadTrack(currentTrack);
-// }
-
-// // Play the previous track
-// function prevTrack() {
-//   currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
-//   loadTrack(currentTrack);
-// }
-
-// // Load the initial track
-// loadTrack(currentTrack);
