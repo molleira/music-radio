@@ -2,7 +2,9 @@ import { tracks } from "./tracks.js";
 
 const audio = document.getElementById("audio");
 const cover = document.getElementById("cover");
-const title = document.getElementById("title");
+const title = document.querySelectorAll(".title");
+const info = document.getElementById("info");
+console.log(title);
 
 // Keep track of song and initially load song details into DOM
 let songIndex = 0;
@@ -11,8 +13,9 @@ loadSong(tracks[songIndex]);
 // Update song details
 function loadSong(song) {
   audio.src = `${song.src}`;
-  cover.src = `${song.cover}`;
-  title.innerText = song.name;
+  // cover.src = `${song.cover}`;
+  title.forEach((title) => (title.innerText = song.name));
+  info.innerText = song.info;
 }
 
 // Play song
@@ -21,8 +24,8 @@ const playBtn = document.getElementById("play");
 
 function playSong() {
   musicContainer.classList.add("play");
-  playBtn.querySelector("i.fas").classList.remove("fa-play");
-  playBtn.querySelector("i.fas").classList.add("fa-pause");
+  playBtn.classList.remove("fa-play");
+  playBtn.classList.add("fa-pause");
 
   audio.play();
 }
@@ -30,8 +33,8 @@ function playSong() {
 // Pause song
 function pauseSong() {
   musicContainer.classList.remove("play");
-  playBtn.querySelector("i.fas").classList.add("fa-play");
-  playBtn.querySelector("i.fas").classList.remove("fa-pause");
+  playBtn.classList.add("fa-play");
+  playBtn.classList.remove("fa-pause");
 
   audio.pause();
 }

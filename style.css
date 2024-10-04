@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,31 +6,102 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background: linear-gradient(#000, #2d2d2d, #7BECD8);
+  height: 100vh;
+  background-size: 400% 400%;
+  animation: background 30s ease infinite;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+#info {
+  color: #fff;
+  max-width: 900px;
+  padding: 2em 5em;
+  margin: auto;
+}
+
+.marquee {
+  height: 20px;
+  width: 245px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  color: #7BECD8;
+  
+  display: block;
+  width: 200%;
+  height: 30px;
+
+  position: absolute;
+  overflow: hidden;
+
+  animation: marquee 5s linear infinite;
+}
+
+.marquee span {
+  float: left;
+  width: 50%;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
 .overlay {
-  border-image: linear-gradient(
+  /* border-image: linear-gradient(
     to top left,
     hsl(52 75% 54% / 0.6),
     hsl(0 0% 0% / 0.6))
     fill 1;
+    animation: gradient-animation 1s ease infinite; */
+    background-image: url('image/waters.jpg');
+
 }
 
 .hero {
-  /* font-family: 'Inter', sans-serif; */
+  background: linear-gradient(115deg, #000 0%, #fff 100%);
+  /* height: 100vh; */
 
-  /* background: linear-gradient(115deg, #000 0%, #f0f0f0 100%);
-  height: 100vh;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
 
-  display: flex;
-  align-items: center;
-  justify-content: center; */
-
-  background-image: url('image/waters.jpg');
+  /* background-image: url('image/waters.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
+  /* background: linear-gradient(324deg, #246655, #7fb8aa); */
+  background-size: 400% 400%;
+  /* animation: AnimationName 30s ease infinite; */
+}
+
+@keyframes background {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+
+.text {
+  color: #fff;
+  padding: 2em;
+  max-width: 900px;
 }
 
 /* inclou el reproductor */
@@ -71,10 +142,11 @@
 }
 
 /* titol */
-.music-info h4 {
-  /* color: #fff; */
+#title {
+  color: #fff;
   font-size: 18px;
-  text-align: right;
+  font-weight: 400;
+  /* text-align: right; */
 }
 
 /* linia del temps */
@@ -157,13 +229,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  /* z-index: 1; */
+  /* margin-top: 1em; */
 }
 
 /* botons */
 .action-btn {
-  background-color: #fff;
-  border: 0;
+  /* background-color: #fff; */
+  /* border: 0; */
+  color: #fff;
   font-size: 20px;
 
   cursor: pointer;
@@ -175,6 +249,7 @@
 /* boto play */
 .action-btn.action-btn-big {
   font-size: 30px;
+  color: #7BECD8;
 }
 
 .action-btn:focus {
