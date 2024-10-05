@@ -99,6 +99,25 @@ body {
   outline: 0;
 }
 
+/* ---------- PROGRESS BAR ---------- */
+
+.progress-bar {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 20px;
+  height: 4px;
+  width: 50%;
+}
+
+.progress {
+  background-color: #7BECD8;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
 /* ---------- BOX ---------- */
 
 .box {
