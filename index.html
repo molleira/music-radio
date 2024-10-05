@@ -8,76 +8,37 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
 
-  <title>Radio</title>
+  <title>Music Radio</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-  <!-- <div class="hero overlay"> -->
-  <!-- <p class="text">Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra proin auctor tincidunt facilisi
-      dapibus dignissim
-      dis. Quam tincidunt condimentum ut; turpis ridiculus nunc. Auctor tortor imperdiet elementum dignissim senectus
-      vestibulum convallis. Aptent in cursus id; porttitor feugiat sapien. Pulvinar aptent nunc rutrum lectus volutpat
-      lobortis a lectus.
+  <div class="container">
 
-      Finibus urna pulvinar mus elit suscipit pretium magna a feugiat. Lacinia cras morbi; iaculis sagittis himenaeos
-      nulla inceptos? Fusce lobortis semper suspendisse vehicula felis. Nostra morbi aenean feugiat faucibus volutpat
-      curae cras condimentum. Ridiculus ornare dolor luctus id cursus hendrerit scelerisque risus fusce. Hendrerit
-      lobortis laoreet scelerisque pretium curae adipiscing consequat. Eu neque per per sed tincidunt. Et nec molestie
-      vehicula; id consequat accumsan.
-    </p> -->
-  <!-- <p class="text">
-      Nec lacus vehicula sed cubilia maximus maecenas. Interdum condimentum pulvinar class torquent, dolor vivamus
-      turpis. Integer ac molestie porta felis velit gravida eget; magna vitae. Efficitur finibus lectus suspendisse
-      proin donec suspendisse tellus sociosqu. Facilisis commodo adipiscing morbi elementum nullam risus iaculis.
-      Conubia adipiscing nisl lobortis nulla nam consequat. Mus tristique nisl iaculis et condimentum maximus. Quam et
-      cras natoque ridiculus venenatis nam. Cubilia vulputate porta cras justo etiam venenatis.
-
-      Accumsan convallis vulputate primis proin proin senectus tincidunt blandit. At vestibulum phasellus cursus finibus
-      aliquam commodo pharetra enim. Fusce potenti ipsum erat morbi dignissim fusce id; ex ultrices. Est lobortis cursus
-      semper quam ligula taciti convallis. Varius mattis commodo eu dictumst tempor sagittis taciti. Habitasse vulputate
-      est finibus tristique in per rhoncus. Dapibus inceptos elit laoreet rutrum potenti dis.
-    </p> -->
-  <!-- <img class="waters" src="image/waters.jpg" alt="waters" /> -->
-  <div class="container" id="music-container">
-    <!-- <div class="music-info">
-      <h4 id="title"></h4>
-      <div class="progress-container" id="progress-container">
-        <div class="progress" id="progress"></div>
+    <div class="text">
+      <div>
+        <span class="marquee-text"></span>
+        <span class="marquee-text"></span>
       </div>
-    </div> -->
-
-    <audio src="music/roll.mp3" id="audio"></audio>
-
-    <!-- <div class="img-container">
-        <img src="image/vinyl.jpg" alt="music-cover" id="cover" />
-      </div> -->
-
-    <div class="navigation">
-      <!-- <button id="prev" class="action-btn"> -->
-      <i class="fas fa-backward action-btn" id="prev"></i>
-      <!-- </button> -->
-
-      <!-- <button id="play" class="action-btn action-btn-big"> -->
-      <i class="fas fa-play action-btn action-btn-big" id="play"></i>
-      <!-- </button> -->
-
-      <!-- <button id="next" class="action-btn"> -->
-      <i class="fas fa-forward action-btn" id="next"></i>
-      <!-- </button> -->
     </div>
 
-    <!-- <h4 id="title"></h4> -->
-    <div class="marquee">
-      <div>
-        <span class="title"></span>
-        <span class="title"></span>
+    <div class="player" id="player">
+      <audio src="music/roll.mp3" id="audio"></audio>
+
+      <div class="player-btn">
+        <i class="fas fa-backward action-btn" id="prev"></i>
+        <i class="fas fa-play action-btn action-btn-big" id="play"></i>
+        <i class="fas fa-forward action-btn" id="next"></i>
       </div>
+    </div>
+
+    <div class="box">
+      <img src="image/waters.jpg" alt="music-cover" id="cover" class="cover" />
+      <h2 class="title"></h2>
+      <p class="info"></p>
     </div>
 
   </div>
-  <p id="info"></p>
-  <!-- </div> -->
 
   <script type="module" src="script.js"></script>
 </body>

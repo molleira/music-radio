@@ -2,8 +2,9 @@
 export const tracks = [
   {
     src: "music/roll.mp3",
+    cover: "image/waters.jpg",
+    artist: "The Waters",
     name: "Let The Good Times Roll",
-    cover: "image/vinyl.jpg",
-    info: "Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra proin auctor tincidunt facilisi dapibus dignissim dis. Quam tincidunt condimentum ut; turpis ridiculus nunc. Auctor tortor imperdiet elementum dignissim senectus vestibulum convallis. Aptent in cursus id; porttitor feugiat sapien. Pulvinar aptent nunc rutrum lectus volutpat lobortis a lectus.",
+    info: "This track was recorded live back in 2007, around june. We had just set our small studio in a grarage and we were trying to learn the craft of recording and mixing. This is why  you can listen that this track has a raw feeling, it sounds very live.",
   },
 ];
