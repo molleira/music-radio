@@ -10,7 +10,6 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   background: linear-gradient(45deg, #000, #2d2d2d, #7BECD8);
-  height: 100vh;
   background-size: 400% 400%;
   animation: background 30s ease infinite;
 }
@@ -37,12 +36,12 @@ body {
 
 .text {
   height: 20px;
-  width: 480px;
+  width: 100vh;
 
-  transform: rotate(-90deg) translateY(-100%) translateX(0%);
+  transform: rotate(-90deg) translateX(-50%);
 
-  margin-left: -11.25em;
-  margin-top: 14em;
+  margin-left: -44vh;
+  overflow: hidden;
 }
 
 .text div {
@@ -50,7 +49,6 @@ body {
   
   width: 200%;
   position: absolute;
-  /* overflow: hidden; */
 
   animation: marquee 5s linear infinite;
 }
