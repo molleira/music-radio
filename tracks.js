@@ -1,6 +1,13 @@
 // array of tracks
 export const tracks = [
   {
+    src: "music/take.mp3",
+    cover: "image/waters.jpg",
+    artist: "The Waters",
+    name: "Take Me",
+    info: "This track was recorded around December 2016 by Jaume Mazoni at his studio in La Bisbal. You can listen how simple our instruments were and somehow, also how the project was in a very early phase, as the sound is still underdeveloped. The track was part of a CD that featured tracks of different bands from La Bisbal.",
+  },
+  {
     src: "music/roll.mp3",
     cover: "image/waters.jpg",
     artist: "The Waters",
